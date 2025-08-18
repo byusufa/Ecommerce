@@ -28,9 +28,8 @@ public class SecurityConfig {
         http.authorizeHttpRequests(req ->
                 req
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-//                        .requestMatchers("/login", "/images/**", "/api/file", "/api/file/**","/images/**").permitAll()
-                        .requestMatchers("/login", "/images/**","/basket").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/category/**", "/api/file/**", "/api/product/**","/api/product/category/**").permitAll()
+                        .requestMatchers("/login", "/images/**", "/basket").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/category/**", "/api/file/**", "/api/product/**", "/api/product/category/**").permitAll()
                         .requestMatchers("/admin/**", "/api/category/**", "/api/file/**", "/api/product/**").hasRole("ADMIN")
                         .requestMatchers("/user/**").hasRole("USER")
                         .anyRequest()
